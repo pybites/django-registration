@@ -29,6 +29,7 @@ else:
     DEBUG = False
     ALLOWED_HOSTS = ['.herokuapp.com']
 
+DEBUG = True
 
 # Application definition
 
