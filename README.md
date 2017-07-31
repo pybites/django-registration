@@ -5,6 +5,8 @@ Submission for [Code Challenge 29 - Create a Simple Django App](https://pybit.es
 
 I will further detail here and write an article on it, stay tuned ...
 
+In the meanwhile, you can now [subscribe here](http://pybites-notifier.herokuapp.com/) to receive an email notification when we release a new code challenge. I want to further build this out to allow for more types of notifications (articles, news, project updates).
+
 ### Required env variables
 
 	export SECRET_KEY=xyz
