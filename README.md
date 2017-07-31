@@ -9,8 +9,19 @@ I will further detail here and write an article on it, stay tuned ...
 
 	export SECRET_KEY=xyz
 	export DJANGO_ENV='local'  # app defaults to production
+
+	export GMAIL_SMTP_USER=your_email_user
+	export GMAIL_SMTP_PASSWORD=your_email_pw
+
 	export DB_NAME='pybites_notifications'
 	export DB_USER=a_user
 	export DB_PW=xyz
-	export GMAIL_SMTP_USER=your_email_user
-	export GMAIL_SMTP_PASSWORD=your_email_pw
+
+Configuring the DB is even simpler in production using `dj_database_url`:
+	
+	[settings.py]
+
+	if DJANGO_ENV == 'production':
+		import dj_database_url
+		db_from_env = dj_database_url.config(conn_max_age=500)
+		DATABASES['default'].update(db_from_env)
