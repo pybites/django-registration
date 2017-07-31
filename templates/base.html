@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title>PyBites 100 Days of Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+		<!-- note that there's also blue.uni-form.css and dark.uni-form.css available if you want to try changing defaults up -->
+		<link rel="stylesheet" href="{% static 'uni-form.css' %}" type="text/css" />
+		<link rel="stylesheet" href="{% static 'style.uni-form.css' %}" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+		<!-- uni-form JS library, optional -->
+	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static 'uni-form.jquery.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'uni-form-validation.jquery.min.js' %}"></script>
+		<script>
+			$(function(){
+				$('form.uniForm').uniform();
+			});
+		</script>
+
+  </head>
+  <body>
+  <header>
+    <h1>{% block title %}{% endblock %}</h1>
+
+    <div id="login">
+      {% if user.is_authenticated %}
+        Hey {{ user.username }}, <a href="{% url 'auth_logout' %}?next=/">logout</a>
+      {% else %}
+        Hello guest,  <a href="{% url 'auth_login' %}">login (register)</a>
+      {% endif %}
+    </div>
+
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <br>
+  <hr>
+  <footer>
+    Created by <a href="https://pybit.es" target="_blank">PyBites</a> for <a href="https://pybit.es/codechallenge29.html" target="_blank">code challenge 29</a> as part of our <a href="https://pybit.es/special-100days-of-code.html" target="_blank">100 Days of Django</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+	<p><strong>Glad to have you here!</strong></p>
+
+	<p>You will receive an email with each new challenge.</p>
+
+  <p>We will tweak this page to include more notification settings ...</p>
+{% else %}
+	<p>You can <a href="{% url 'auth_login' %}">sign up here</a> to get a notification email for each new challenge</p>
+{% endif %}
+{% endblock %}
