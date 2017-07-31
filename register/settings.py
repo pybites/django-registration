@@ -21,14 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 DJANGO_ENV = os.getenv('DJANGO_ENV', 'production').lower()
-ALLOWED_HOST_STR = os.getenv('ALLOWED_HOST_STR')
 
 if DJANGO_ENV == 'local':
     DEBUG = True
     ALLOWED_HOSTS = ['*']
 else:
     DEBUG = False
-    ALLOWED_HOSTS = [ALLOWED_HOST_STR]
+    ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
