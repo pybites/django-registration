@@ -31,6 +31,11 @@
     <div id="login">
       {% if user.is_authenticated %}
         Hey {{ user.username }}, <a href="{% url 'auth_logout' %}?next=/">logout</a>
+
+				{% if user.is_superuser %}
+					&nbsp;|&nbsp;<a href="{% url 'admin:index' %}">admin</a>
+				{% endif %}
+
       {% else %}
         Hello guest,  <a href="{% url 'auth_login' %}">login (register)</a>
       {% endif %}
