@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if user.is_authenticated %}
-	<p><strong>Glad to have you here!</strong></p>
 
-	<p>You will receive an email with each new challenge.</p>
+<h2>PyBites Code Challenges</h2>
 
-  <p>We will tweak this page to include more notification settings ...</p>
-{% else %}
-	<p>You can <a href="{% url 'registration_register' %}">sign up here</a> to get a notification email for each new challenge</p>
-{% endif %}
+<p style="font-size: 120%;">Thanks for stopping by. This app is EOL. We built our fully integrated code challenge platform where you can get notified and work on challenges, including in the browser. Hope to salute you there: <a href="http://codechalleng.es/">codechalleng.es</a>.</p>
+
 {% endblock %}
